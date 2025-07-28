@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@theme {
+  --breakpoint-lg: 1200px;
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 768px;
+  --color-primary: #ffffff;
+  --color-seconary: #b3b3b3;
+  --color-Accent: #e50914;
+  --shadow-primaries:0 0 10px black; 
+  --color-bgroundcolor:#121212;
+  --font-title:"Montserrat", sans-serif;
+  --font-body: "Roboto", sans-serif
+}
+
+@layer base{
+  body{
+    @apply bg-bgroundcolor
+  }
+  h3{
+    @apply text-Accent font-title
+  }
+  p{
+    @apply text-primary font-body
+  }
+}
+@layer components{
+  .mobilenav{
+    @apply absolute w-full h-[84%] top-[100px] flex items-center
+    flex-col left-[-100%] transition-all duration-300 ease-in-out bg-Accent z-50
+  }
+  .hidenav{
+    @apply left-[0]
+  }
+  .Navlist{
+    @apply absolute  w-[90%] mt-[50] mt-[20%] flex flex-col gap-1.5 z-50
+  }
+  .Navlist li{
+    @apply hover:bg-red-700
+  }
+}
