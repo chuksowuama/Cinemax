@@ -72,7 +72,7 @@ const Categories = () => {
     <div className="px-4 py-10 bg-gray-950 text-white">
       <GenreCarousel title="Drama" data={dramaCategories} />
       <GenreCarousel title="Action" data={actionCategories} />
-      <GenreCarousel title="Science Fiction" data={scienceFictionCategories} />
+      <GenreCarousel title="Science-Fiction" data={scienceFictionCategories} />
       <GenreCarousel title="Comedy" data={comedyCategories} />
       <GenreCarousel title="Horror" data={horrorCategories} />
       <GenreCarousel title="Romance" data={romanceCategories} />
