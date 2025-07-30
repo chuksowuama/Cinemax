@@ -11,7 +11,7 @@ export const navItems = [
       { label: "Romance", path: "/genres/romance" },
       { label: "Horror", path: "/genres/horror" },
       { label: "Drama", path: "/genres/drama" },
-      { label: "Sci-Fi", path: "/genres/sci-fi" },
+      { label: "Sci-Fi", path: "/genres/Science-Fiction" },
     ],
   },
   { id: 4, label: "Top Rated", path: "/top-rated" },

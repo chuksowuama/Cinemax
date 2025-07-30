@@ -24,7 +24,6 @@ const Series = () => {
     }
   
   },[genreId])
-  
 
   const displayfilteredSeries=genreId?GenreId || []: filteredSeries&&filteredSeries.length>0?filteredSeries: movies?movies:[];
   const totalPages= Math.ceil(displayfilteredSeries.length/itemsperPage)
@@ -39,7 +38,7 @@ const Series = () => {
       <header className="w-full bg-gray-900 py-6 px-4">
         <h1 className="text-3xl font-bold text-center">Series</h1>
         <p className="text-center text-gray-400 mt-2">
-          Discover and filter your favorite TV shows
+          Discover and filter your favorite TV shows <h1 className='font-bold'>{genreId? genreId:"All Genres"}</h1>
         </p>
       </header>
 
