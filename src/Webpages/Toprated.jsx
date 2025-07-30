@@ -9,7 +9,7 @@ const Toprated = () => {
   const[Toprated,setToprated]=useState([])
   const topRated=useSelector(state=>state.stored.items)
   const[currentpage,setCurrentpage]=useState(1)
-  const itemsperpage=10
+  const itemsperpage=50
 
 
   const totalpage= Math.ceil(Toprated.length / itemsperpage)

@@ -11,7 +11,7 @@ const Series = () => {
   const filteredSeries=Location.state?.filteredCategories
   const movies=useSelector(state=>state.stored.items) 
   const[GenreId,setGenreId]=useState()
-  const itemsperPage=30
+  const itemsperPage=50
   const {genreId}=useParams()
   const[currentPage,setcurrentPage]=useState(1)
 
