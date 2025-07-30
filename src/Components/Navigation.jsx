@@ -67,7 +67,7 @@ const Navigation = () => {
           </li>
         ))}
       </ul>  
-      <h1 className="m-auto text-Accent font-bold">Bring Deals Abeg!!</h1>
+      {mobile&&<h1 className="m-auto text-Accent font-bold">Bring Deals Abeg!!</h1>}
         </nav>
         <div onClick={()=>setOpenSearch(!openSearch)}><i class="fa-solid fa-magnifying-glass   text-white text-1xl hover:text-Accent"></i></div>
     </div>
