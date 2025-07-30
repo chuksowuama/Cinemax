@@ -8,9 +8,12 @@ import { Link } from 'react-router-dom';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
+import { useMediaQuery } from 'react-responsive';
 
 // A reusable carousel for one genre
 const GenreCarousel = ({ title, data }) => {
+  const mobile=useMediaQuery({query:"(min-width:200px)"})
+  const tablet=useMediaQuery({query:"(min-width:768px)"})
   return (
     <section className="mb-12">
       <div className="flex items-center justify-between px-2 mb-4">
@@ -29,7 +32,7 @@ const GenreCarousel = ({ title, data }) => {
           768: { slidesPerView: 4, spaceBetween: 10 },
           1024: { slidesPerView: 6, spaceBetween: 12 },
         }}
-        navigation={true}
+        navigation={tablet?true:false}
         modules={[Navigation, Autoplay]}
         className="w-full"
       >

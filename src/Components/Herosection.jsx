@@ -27,13 +27,13 @@ const HeroSection = () => {
       >
         {heroImages.map((hero) => (
           <SwiperSlide key={hero.id}>
-            <Link to={`/details/${hero.id}`}>
+            <Link to={`/details/${hero.name}`}>
               <div className="relative w-full h-full group cursor-pointer overflow-hidden">
                 {/* Background Image */}
                 <img
                   src={hero.image?.original}
                   alt={hero.name}
-                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-[50%] transform group-hover:scale-105 transition-transform duration-700"
                 />
 
                 {/* Dark gradient overlay */}

@@ -28,8 +28,8 @@
 }
 @layer components{
   .mobilenav{
-    @apply absolute w-full h-[84%] top-[100px] flex items-center
-    flex-col left-[-100%] transition-all duration-300 ease-in-out bg-Accent z-50
+    @apply absolute w-full h-[100vh] top-[60px] flex items-center z-50
+    flex-col left-[-100%] transition-all duration-300 ease-in-out border border-Accent bg-Accent
   }
   .hidenav{
     @apply left-[0]

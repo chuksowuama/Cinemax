@@ -4,7 +4,7 @@ import Movies from '../Webpages/Movies'
 // import { setFilteredSearch } from '../Reduxindex'
 import { useNavigate } from 'react-router-dom'
 
-const SearchBar = () => {
+const SearchBar = ({remove}) => {
     const[searchvalue,setSearchValue]=useState("")
     const [filteredMovies,setFilteredMovies]=useState([])
     const movies=useSelector(state=>state.stored.items)
@@ -29,14 +29,17 @@ const SearchBar = () => {
 
         setSearchValue("")
     }
-    useEffect(()=>{
-        console.log(filteredMovies)
-    },[filteredMovies])
+
   return (
     <>
-    <div className='border border-white rounded-2xl py-1.5 px-2 flex justify-between gap-1.5 bg-white'>
-      <input type="text" name="" id="" value={searchvalue} onChange={handlesearchvalue} className='border-none outline-transparent' />
-      <button onClick={handlefindMovie} className='cursor-pointer'><i class="fa-solid fa-magnifying-glass"></i></button>
+    <div className='backdrop-blur-md bg-bgroundcolor/90 py-1.5 px-2 flex justify-center items-start gap-1.5 mt-20
+      sm:sticky sm:left-0 top-17 w-full h-[100vh]
+      md:sticky  z-40
+    '>
+     <div className='mt-10 w-[80%] flex justify-center gap-2.5' >
+       <input type="text" name="" id="" value={searchvalue} onChange={handlesearchvalue} className='border border-Accent w-[90%] p-1 text-white focus:bg-whiyte' />
+      <button onClick={handlefindMovie} className='cursor-pointer'><i class="fa-solid fa-magnifying-glass text-white text-2xl hover:text-Accent" onClick={remove}></i></button>
+     </div>
     </div>
     </>
   )
