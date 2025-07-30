@@ -10,6 +10,7 @@ const Navigation = () => {
   const[togglebtn,setTogglebtn]=useState(false)
   const[openSearch,setOpenSearch]=useState(false)
   const clickout=useRef(null)
+  const clickoutnavbar=useRef(null)
   const mobile=useMediaQuery({query:"(min-width:290px)"})
   const tablet=useMediaQuery({query:"(min-width:768px)"})
 
@@ -28,18 +29,24 @@ const Navigation = () => {
     setOpenderopMenu({})
   })
 
+  clickoutHook(clickoutnavbar,()=>{
+    if(mobile){
+      setTogglebtn(false)
+    }
+  })
+
   return (
     <>
         <div className="fixed w-full z-50 left-0 top-0 backdrop-blur-md bg-bgroundcolor/90 shadow-md flex justify-between items-center px-6 py-3">  
-     <span onClick={handleToggle} className="text-white md:hidden cursor-pointer"><i class={togglebtn?"fa-solid fa-xmark":"fa-solid fa-bars"}></i></span>
+     <span onClick={handleToggle} className="text-white md:hidden cursor-pointer z-50"><i class={togglebtn?"fa-solid fa-xmark":"fa-solid fa-bars"}></i></span>
         <Link to="/">
-        <div className="flex gap-1.5 items-center relative">
+        <div className="flex gap-1.5 items-center relative z-50">
         <img src={logo} alt="" className="w-7 h-7" />
         <h3 className="text-2xl">Cinemax</h3>
       </div>
         </Link>
 
-        <nav className={tablet?"flex gap-6 items-center z-50": mobile? `mobilenav ${togglebtn?"hidenav":""}`:"" } >
+        <nav className={tablet?"flex gap-6 items-center z-50": mobile? `mobilenav ${togglebtn?"hidenav":""}`:"" } ref={clickoutnavbar} >
            <ul className={tablet?"flex gap-6 items-center  mt-4.5 z-50":"Navlist"} ref={clickout}>
         {navItems.map((item) => (
           <li className="relative cursor-pointer p-1.5 ">
@@ -60,6 +67,7 @@ const Navigation = () => {
           </li>
         ))}
       </ul>  
+      <h1 className="m-auto text-Accent font-bold">Bring Deals Abeg!!</h1>
         </nav>
         <div onClick={()=>setOpenSearch(!openSearch)}><i class="fa-solid fa-magnifying-glass   text-white text-1xl hover:text-Accent"></i></div>
     </div>
