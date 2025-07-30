@@ -51,7 +51,7 @@ const Navigation = () => {
         {navItems.map((item) => (
           <li className="relative cursor-pointer p-1.5 ">
             {item.children ? (
-              <p onClick={() => handleOpendrop(item.id)}>{item.label}{opendropmenu[item.id]?"▲" : "▼"}</p>
+              <p onClick={() => handleOpendrop(item.id)} className={mobile&&"flex justify-between"}>{item.label}<span>{opendropmenu[item.id]?"▲" : "▼"}</span> </p>
             ) : (
               <Link to={item.path}>
                 <p onClick={handleToggle}>{item.label}</p>
